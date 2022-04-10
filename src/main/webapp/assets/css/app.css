@@ -1,0 +1,16 @@
+body {
+  direction: rtl;
+  font-family: 'Cairo';
+}
+
+.card-style {
+  padding: 18px;
+  margin: 18px auto;
+  border-radius: 10px;
+}
+
+.form-select {
+  -moz-padding-start: calc(0.75rem - -18px);
+  padding-right: 30px;
+}
+
