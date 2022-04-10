@@ -49,7 +49,9 @@
             </div>
         </div>
     </nav>
-    <sql:setDataSource var="db" driver="com.mysql.cj.jdbc.Driver" url="jdbc:mysql://localhost:3306/mwt_wjd_db" user="root" password=""/>
+    <%-- <sql:setDataSource var="db" driver="com.mysql.cj.jdbc.Driver" url="jdbc:mysql://localhost:3306/mwt_wjd_db" user="root" password=""/> --%>
+    <%-- <sql:setDataSource var="db" driver="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/mwt_wjd_db" user="postgres" password="123"/> --%>
+    <sql:setDataSource var="db" driver="org.postgresql.Driver" url="jdbc:postgresql://ec2-52-30-67-143.eu-west-1.compute.amazonaws.com:5432/d9di4fco067fro" user="eyaynajizzxvfh" password="2180de3b721c3b93072c3bc9742eef6693792c1f92dc33d310192f69655c2725"/>
     <div class="container" style="margin-top: 100px;">
         <div class="row">
             <div class="col-md-6 col-xl-3 mb-4">

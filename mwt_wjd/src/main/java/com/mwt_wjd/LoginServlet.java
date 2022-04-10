@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
 		Connection conn = GetDatabaseConnection.getConnection();
 		String sql = "select * from users where username = ? and password = ? and role = 1 and status = 1";
 		PreparedStatement ps;
-		User user = null;
+		User user;
 		int uid = 0;
 		try {
 			ps = conn.prepareStatement(sql);
@@ -58,9 +58,25 @@ public class LoginServlet extends HttpServlet {
 								rs.getInt("status"), 
 								rs.getDate("date_created"), 
 								rs.getDate("date_modified"));
+			}else {
+				user = new User(uid, 
+						null, 
+						null, 
+						null, 
+						0, 
+						0, 
+						null, 
+						null);
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			user = new User(uid, 
+					null, 
+					null, 
+					null, 
+					0, 
+					0, 
+					null, 
+					null);
 		}
 		
 		return user;

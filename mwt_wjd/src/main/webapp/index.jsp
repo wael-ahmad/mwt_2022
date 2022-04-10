@@ -49,12 +49,19 @@
                 <div class="block-heading">
                     <h2 class="text-info" id="show_estates">أحدث العروض</h2>
                 </div>
-                <sql:setDataSource var="db" driver="com.mysql.cj.jdbc.Driver" url="jdbc:mysql://localhost:3306/mwt_wjd_db" user="root" password=""/>
+                <%-- <sql:setDataSource var="db" driver="com.mysql.cj.jdbc.Driver" url="jdbc:mysql://localhost:3306/mwt_wjd_db" user="root" password=""/> --%>
+                <%-- <sql:setDataSource var="db" driver="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/mwt_wjd_db" user="postgres" password="123"/> --%>
+                <sql:setDataSource var="db" driver="org.postgresql.Driver" url="jdbc:postgresql://ec2-52-30-67-143.eu-west-1.compute.amazonaws.com:5432/d9di4fco067fro" user="eyaynajizzxvfh" password="2180de3b721c3b93072c3bc9742eef6693792c1f92dc33d310192f69655c2725"/>
 
 				<sql:query var="rs" dataSource="${db}">
 					select * from estates where status = 2 order by uploaded_on desc
 				</sql:query>
-				
+				<c:if test="${rs.rowCount == 0}">
+					<h4 style="text-align:center;">لا يوجد عروض حالياً، انقر على إضافة عرض لتكون أول من يضيف عرضاً</h4>
+					<p style="text-align:center;">
+						<a class="btn btn-primary btn-lg mt-3" role="button" href="upload_estate.jsp">إضافة عرض</a>
+					</p>
+				</c:if>
 				<c:forEach  items="${rs.rows}" var="row">
 					<div class="col-lg-8 card-style shadow">
                         <div class="row g-0 align-items-center">

@@ -26,12 +26,6 @@
   		<artifactId>commons-fileupload</artifactId>
   		<version>1.4</version>
   	</dependency>
-  	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-	<dependency>
-	    <groupId>mysql</groupId>
-	    <artifactId>mysql-connector-java</artifactId>
-	    <version>8.0.28</version>
-	</dependency>
 	<!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
 	<dependency>
 	    <groupId>org.apache.taglibs</groupId>
@@ -52,5 +46,10 @@
 	    <version>1.2</version>
 	</dependency>
 
+	<dependency>
+		<groupId>org.postgresql</groupId>
+		<artifactId>postgresql</artifactId>
+		<version>42.2.18</version>
+	</dependency>
   </dependencies>
 </project>
