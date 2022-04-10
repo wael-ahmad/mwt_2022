@@ -117,7 +117,7 @@ public class RequestAppointement extends HttpServlet {
 		boolean isValid = true;
 		
 		try {
-			buyerName = new String(this.req.getParameter("buyer_name").getBytes("8859_1"), "UTF-8");
+			buyerName = new String(this.req.getParameter("buyer_name").getBytes("8859-1"), "UTF-8");
 			buyerMobile = this.req.getParameter("buyer_mobile");
 			appointementDate = this.req.getParameter("appointement_time");
 			this.req.setAttribute("v_buyer_name_value", buyerName);
@@ -128,22 +128,22 @@ public class RequestAppointement extends HttpServlet {
 			e1.printStackTrace();
 		}
     	if(isEmptyString(buyerName)) {
-			this.req.setAttribute("p_buyer_name_error", "íÌÈ ÊÍÏíÏ ÇÓãß ÇáßÇãá!");
+			this.req.setAttribute("p_buyer_name_error", "ÙŠØ¬Ø¨ ØªØ­Ø¯ÙŠØ¯ Ø§Ø³Ù…Ùƒ Ø§Ù„ÙƒØ§Ù…Ù„!");
 			isValid = false;
 		}
     	
     	if(isEmptyString(buyerMobile)) {
-    		this.req.setAttribute("p_buyer_mobile_error", "íÌÈ ÊÍÏíÏ ÑŞã ÇáãæÈÇíá!");
+    		this.req.setAttribute("p_buyer_mobile_error", "ÙŠØ¬Ø¨ ØªØ­Ø¯ÙŠØ¯ Ø±Ù‚Ù… Ø§Ù„Ù…ÙˆØ¨Ø§ÙŠÙ„!");
 			isValid = false;
 		}
     	
     	if(!isValidMobileNumber(buyerMobile)){
-    		this.req.setAttribute("p_buyer_mobile_error", "ÕíÛÉ ÇáÑŞã ÛíÑ ÕÍíÍÉ!");
+    		this.req.setAttribute("p_buyer_mobile_error", "ØµÙŠØºØ© Ø§Ù„Ø±Ù‚Ù… ØºÙŠØ± ØµØ­ÙŠØ­Ø©!");
 			isValid = false;
 		}
     	
     	if(isEmptyString(appointementDate)) {
-    		this.req.setAttribute("p_appointement_time_error", "íÌÈ ÊÍÏíÏ ÇáãæÚÏ!");
+    		this.req.setAttribute("p_appointement_time_error", "ÙŠØ¬Ø¨ ØªØ­Ø¯ÙŠØ¯ Ø§Ù„Ù…ÙˆØ¹Ø¯!");
 			isValid = false;
 		}
 		
