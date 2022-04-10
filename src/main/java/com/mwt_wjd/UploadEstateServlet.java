@@ -144,7 +144,7 @@ public class UploadEstateServlet extends HttpServlet {
 				        	if(isInteger(value)) {
 								estateType = Integer.parseInt(value);
 							}else {
-								request.setAttribute("p_estate_type_error", "äæÚ ÇáÚŞÇÑ ÇáãÍÏÏ ÛíÑ ÕÇáÍ!");
+								request.setAttribute("p_estate_type_error", "Ù†ÙˆØ¹ Ø§Ù„Ø¹Ù‚Ø§Ø± Ø§Ù„Ù…Ø­Ø¯Ø¯ ØºÙŠØ± ØµØ§Ù„Ø­!");
 								isValid = false;
 							}
 				        }else if(name.equals("purchase_type")) {
@@ -152,7 +152,7 @@ public class UploadEstateServlet extends HttpServlet {
 				        	if(isInteger(value)) {
 								purchaseType = Integer.parseInt(value);
 							}else {
-								request.setAttribute("p_purchase_type_error", "äæÚ ÇáÈíÚ ÇáãÍÏÏ ÛíÑ ÕÇáÍ!");
+								request.setAttribute("p_purchase_type_error", "Ù†ÙˆØ¹ Ø§Ù„Ø¨ÙŠØ¹ Ø§Ù„Ù…Ø­Ø¯Ø¯ ØºÙŠØ± ØµØ§Ù„Ø­!");
 								isValid = false;
 							}
 				        }else if(name.equals("estate_size")) {
@@ -160,43 +160,43 @@ public class UploadEstateServlet extends HttpServlet {
 				        	if(isDouble(value)) {
 								estateSize = Double.parseDouble(value);
 							}else {
-								request.setAttribute("p_size_error", "íÌÈ Ãä Êßæä ÇáãÓÇÍÉ ÑŞãÇğ!");
+								request.setAttribute("p_size_error", "ÙŠØ¬Ø¨ Ø£Ù† ØªÙƒÙˆÙ† Ø§Ù„Ù…Ø³Ø§Ø­Ø© Ø±Ù‚Ù…Ø§Ù‹!");
 								isValid = false;
 							}
 				        }else if(name.equals("estate_address")) {
-				        	request.setAttribute("v_estate_address_value", new String(value.getBytes("8859_1"), "UTF-8"));
+				        	request.setAttribute("v_estate_address_value", new String(value.getBytes("8859-1"), "UTF-8"));
 				        	if(isEmptyString(value)) {
-								request.setAttribute("p_address_error", "íÌÈ ÊÍÏíÏ ÇáÚäæÇä!");
+								request.setAttribute("p_address_error", "ÙŠØ¬Ø¨ ØªØ­Ø¯ÙŠØ¯ Ø§Ù„Ø¹Ù†ÙˆØ§Ù†!");
 								isValid = false;
 							}else {
-								estateAddress = new String(value.getBytes("8859_1"), "UTF-8").trim();
+								estateAddress = new String(value.getBytes("8859-1"), "UTF-8").trim();
 							}
 				        }else if(name.equals("price")) {
 				        	request.setAttribute("v_price_value", value);
 				        	if(isDouble(value)) {
 								price = Double.parseDouble(value);
 							}else {
-								request.setAttribute("p_price_error", "íÌÈ Ãä íßæä ÇáÓÚÑ ÑŞãÇğ!");
+								request.setAttribute("p_price_error", "ÙŠØ¬Ø¨ Ø£Ù† ÙŠÙƒÙˆÙ† Ø§Ù„Ø³Ø¹Ø± Ø±Ù‚Ù…Ø§Ù‹!");
 								isValid = false;
 							}
 				        }else if(name.equals("estate_notes")) {
-				        	estateNotes = new String(value.getBytes("8859_1"), "UTF-8").trim();
-				        	request.setAttribute("v_estate_notes_value", new String(value.getBytes("8859_1"), "UTF-8"));
+				        	estateNotes = new String(value.getBytes("8859-1"), "UTF-8").trim();
+				        	request.setAttribute("v_estate_notes_value", new String(value.getBytes("8859-1"), "UTF-8"));
 				        }else if(name.equals("seller_name")) {
-				        	request.setAttribute("v_seller_name_value", new String(value.getBytes("8859_1"), "UTF-8"));
+				        	request.setAttribute("v_seller_name_value", new String(value.getBytes("8859-1"), "UTF-8"));
 				        	if(isEmptyString(value)) {
-								request.setAttribute("p_seller_name_error", "íÌÈ ÊÍÏíÏ ÇáÇÓã!");
+								request.setAttribute("p_seller_name_error", "ÙŠØ¬Ø¨ ØªØ­Ø¯ÙŠØ¯ Ø§Ù„Ø§Ø³Ù…!");
 								isValid = false;
 							}else {
-								sellerName = new String(value.getBytes("8859_1"), "UTF-8").trim();
+								sellerName = new String(value.getBytes("8859-1"), "UTF-8").trim();
 							}
 				        }else if(name.equals("mobile1")) {
 				        	request.setAttribute("v_mobile1_value", value);
 				        	if(isEmptyString(value)) {
-								request.setAttribute("p_mobile1_error", "íÌÈ ÊÍÏíÏ ÑŞã ÇáãæÈÇíá!");
+								request.setAttribute("p_mobile1_error", "ÙŠØ¬Ø¨ ØªØ­Ø¯ÙŠØ¯ Ø±Ù‚Ù… Ø§Ù„Ù…ÙˆØ¨Ø§ÙŠÙ„!");
 								isValid = false;
 							}else if(!isValidMobileNumber(value)){
-								request.setAttribute("p_mobile1_error", "ÕíÛÉ ÇáÑŞã ÛíÑ ÕÍíÍÉ!");
+								request.setAttribute("p_mobile1_error", "ØµÙŠØºØ© Ø§Ù„Ø±Ù‚Ù… ØºÙŠØ± ØµØ­ÙŠØ­Ø©!");
 								isValid = false;
 							}else {
 								mobile1 = value.trim();
@@ -204,7 +204,7 @@ public class UploadEstateServlet extends HttpServlet {
 				        }else if(name.equals("mobile2")) {
 				        	request.setAttribute("v_mobile2_value", value);
 				        	if(!isEmptyString(value) && !isValidMobileNumber(value)) {
-								request.setAttribute("p_mobile2_error", "ÕíÛÉ ÇáÑŞã ÛíÑ ÕÍíÍÉ!");
+								request.setAttribute("p_mobile2_error", "ØµÙŠØºØ© Ø§Ù„Ø±Ù‚Ù… ØºÙŠØ± ØµØ­ÙŠØ­Ø©!");
 								isValid = false;
 							}else {
 								mobile2 = value.trim();
