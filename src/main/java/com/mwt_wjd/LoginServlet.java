@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
 			
 			response.sendRedirect("cpanel.jsp");
 		}else {
-			request.setAttribute("p_error", "ÇÓã ÇáãÓÊÎÏã Ãæ ßáãÉ ÇáãÑæÑ ÛíÑ ÕÍíÍ!");
+			request.setAttribute("p_error", "Ø§Ø³Ù… Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù… Ø£Ùˆ ÙƒÙ„Ù…Ø© Ø§Ù„Ù…Ø±ÙˆØ± ØºÙŠØ± ØµØ­ÙŠØ­!");
 			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 			rd.forward(request, response);
 		}
